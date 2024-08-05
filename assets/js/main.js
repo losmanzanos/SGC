@@ -61,6 +61,14 @@
 
         $wrapper = document.createElement('div');
         $wrapper.id = 'bg';
+        
+        // Add styles to create space at the top
+        $wrapper.style.marginTop = '50px'; // Adjust this value as needed
+        $wrapper.style.display = 'flex';
+        $wrapper.style.justifyContent = 'center';
+        $wrapper.style.alignItems = 'center';
+        $wrapper.style.height = 'calc(100vh - 50px)'; // Adjust height to account for margin
+
         $body.appendChild($wrapper);
 
         for (k in settings.images) {
@@ -69,6 +77,8 @@
             $bg.style.backgroundPosition = settings.images[k];
             $bg.style.backgroundSize = 'contain';  // Ensure the whole image is displayed
             $bg.style.backgroundRepeat = 'no-repeat'; // Prevent repeating
+            $bg.style.width = '100%';
+            $bg.style.height = '100%';
             $wrapper.appendChild($bg);
             $bgs.push($bg);
         }
